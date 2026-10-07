@@ -1,0 +1,4 @@
+dataset yg digunakan :
+RSUD20K
+TLD-LOKI
+Traffic sign

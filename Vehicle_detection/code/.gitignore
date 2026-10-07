@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+yolo-env/
+
+# Model weights & training artifacts (default: terlalu besar untuk Git)
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# Dataset & hasil (simpan terpisah, bukan di Git)
+dataset/
+merged_dataset/
+TLD_yolo/
+risk_output/
+
+# runs/: hasil training (checkpoint last.pt, log, gambar train/val batch) diabaikan,
+# KECUALI 3 file best.pt (model final) yang dipakai untuk inference -- lihat README.
+runs/*
+!runs/detect
+runs/detect/*
+!runs/detect/motorcyclist-hazard
+!runs/detect/taillight
+runs/detect/motorcyclist-hazard/*
+!runs/detect/motorcyclist-hazard/exp26
+!runs/detect/motorcyclist-hazard/expv8
+runs/detect/motorcyclist-hazard/exp26/*
+!runs/detect/motorcyclist-hazard/exp26/weights
+runs/detect/motorcyclist-hazard/exp26/weights/*
+!runs/detect/motorcyclist-hazard/exp26/weights/best.pt
+runs/detect/motorcyclist-hazard/expv8/*
+!runs/detect/motorcyclist-hazard/expv8/weights
+runs/detect/motorcyclist-hazard/expv8/weights/*
+!runs/detect/motorcyclist-hazard/expv8/weights/best.pt
+runs/detect/taillight/*
+!runs/detect/taillight/exp1-yolov10
+runs/detect/taillight/exp1-yolov10/*
+!runs/detect/taillight/exp1-yolov10/weights
+runs/detect/taillight/exp1-yolov10/weights/*
+!runs/detect/taillight/exp1-yolov10/weights/best.pt
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

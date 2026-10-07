@@ -1,0 +1,49 @@
+# ============================================================
+# requirements.txt -- Vehicle Detection (RSUD20K + Roboflow merge, YOLO training)
+#
+# PENTING soal PyTorch + CUDA:
+#   File ini TIDAK menyertakan versi torch/torchvision secara ketat, karena
+#   torch dengan dukungan CUDA harus diinstall lewat index khusus PyTorch,
+#   bukan lewat PyPI biasa (kalau lewat "pip install -r requirements.txt"
+#   langsung, kamu akan dapat build CPU-only).
+#
+#   Gunakan Python 3.11 atau 3.12 (BUKAN 3.14 -- PyTorch belum menyediakan
+#   wheel CUDA untuk Python 3.14 di Windows per pertengahan 2026).
+#
+#   Install torch TERPISAH sebelum menjalankan file ini, contoh untuk CUDA 12.4:
+#     pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
+#
+#   Cek versi CUDA yang cocok dengan driver GPU-mu di:
+#     https://pytorch.org/get-started/locally/
+#
+#   Setelah torch+CUDA terpasang, baru jalankan:
+#     pip install -r requirements.txt
+# ============================================================
+
+# --- Deteksi objek / training ---
+ultralytics==8.4.95
+ultralytics-thop==2.0.20
+
+# --- Utilitas umum ---
+numpy
+pandas
+Pillow
+PyYAML
+tqdm
+matplotlib
+opencv-python
+
+# --- Download dataset ---
+kagglehub
+roboflow
+
+# --- Monitoring training (opsional tapi direkomendasikan) ---
+tensorboard
+
+# --- Dependency pendukung (biasanya otomatis ke-install, dicantumkan untuk kelengkapan) ---
+requests
+setuptools
+six
+sympy
+typing-extensions
+urllib3
